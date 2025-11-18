@@ -1,0 +1,25 @@
+.streaming-container {
+	border: 1px solid gray;
+	margin: 1em 0;
+	padding: 0 1em;
+	border-radius: 0.3em;
+
+	.remove {
+		background-color: rgb(253, 133, 193);
+		margin-left: 1em;
+		transition: 
+			transform 1s linear, 
+			background-color 0.1s;
+
+		&:hover {
+			transform: rotateZ(-720deg);
+		}
+		
+		&.blink {
+			background-color: rgb(243, 243, 117);
+		}
+	}
+	li {
+		margin: 0.2em 0;
+	}
+}
