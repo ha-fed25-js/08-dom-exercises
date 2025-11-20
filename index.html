@@ -21,12 +21,12 @@
 		<div class="tab-headings">
 			<p class="selected"> Trafikljus </p>
 			<p> Streamingprofiler </p>
-			<p> Nummer tre </p>
+			<p> Räknare (LS) </p>
 		</div>
 		<div class="tab-content">
 
 			<!-- Flik 1 -->
-			<div>
+			<div class="hidden">
 				<div class="row">
 					<div class="lights">
 						<div class="top on"></div>
@@ -50,7 +50,12 @@
 			<!-- Flik 3 -->
 			 <div class="hidden">
 				<section>
-					<p> Det är lätt att lägga till en ny flik! </p>
+					<p> Värdet ska sparas med localStorage och hämtas igen när vi laddar om sidan! </p>
+					<div class="row">
+						<button id="minus-button"> -1 </button>
+						<span id="counter-value"> 0 </span>
+						<button id="plus-button"> +1 </button>
+					</div>
 				</section>
 			 </div>
 

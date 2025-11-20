@@ -3,7 +3,9 @@ import { books } from "./books.js"
 
 const state = {
 	cart: [],
-	books: books
+	books: books,
+	counter: 0,
+	selectedTab: 0
 }
 
 export { state }
