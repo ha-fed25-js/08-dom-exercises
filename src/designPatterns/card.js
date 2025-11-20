@@ -1,13 +1,10 @@
-import { books } from './books.js'
+import { state } from "./store.js"
 
 // DOM-element
 const cardSection = document.querySelector('.cards')
 const lowerPriceButton = document.querySelector('#card-lower-price')
 const higherPriceButton = document.querySelector('#card-higher-price')
 const cartContainer = document.querySelector('.card-cart .cart')
-
-// Vanliga variabler
-let cart = []  // kommer innehålla book-objekt
 
 
 // -------- Renderingsfunktioner --------
@@ -36,10 +33,10 @@ function renderBooks(books) {
 		// commentContainer.textContent = 'Unsafe user comments'
 
 		div.querySelector('button').addEventListener('click', () => {
-			console.log('TEST: klickade på bokens köp-knapp')
-			cart.push(book)
+			// console.log('TEST: klickade på bokens köp-knapp')
+			state.cart.push(book)  // <- GOOD
 			// cart.push(`Bokens titel ... bokens pris`)  <- BAD
-			renderCart(cart)
+			renderCart(state.cart)
 		})
 
 		cardSection.append(div)
@@ -48,7 +45,7 @@ function renderBooks(books) {
 
 // Kundvagnen (lista med böcker man ska köpa)
 function renderCart(cartItems) {
-	console.log('TEST: renderar kundvagnen')
+	// console.log('TEST: renderar kundvagnen')
 	// Rensa containern
 	cartContainer.innerHTML = ''
 
@@ -65,7 +62,7 @@ function renderCart(cartItems) {
 
 lowerPriceButton.addEventListener('click', () => {
 	// Använd ({}) för att returnera ett objekt från en arrow function
-	let cheapBooks = books.map(book => ({
+	let cheapBooks = state.books.map(book => ({
 		...book,
 		price: Math.round(book.price * 0.9)
 	}))
@@ -73,12 +70,14 @@ lowerPriceButton.addEventListener('click', () => {
 })
 
 higherPriceButton.addEventListener('click', () => {
-	let expensiveBooks = books.map(book => ({
+	let expensiveBooks = state.books.map(book => ({
 		...book,
 		price: Math.round(book.price * 1.1)
 	}))
 	renderBooks(expensiveBooks)
 })
+
+export { renderBooks, renderCart }
 
 
 /*
@@ -91,7 +90,3 @@ higherPriceButton.addEventListener('click', () => {
 	</ul>
 </div>
 */
-
-//  Första renderingen
-renderBooks(books)
-renderCart(cart)

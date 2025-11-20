@@ -11,25 +11,44 @@
 	<link rel="stylesheet" href="style/designPatterns.css">
 	<script type="module" src="./src/7.6.js"></script>
 	<script type="module" src="./src/7.7.js"></script>
-	<script type="module" src="./src/designPatterns/card.js"></script>
+
+	<!-- Importera en JS-fil, som i sin tur har ansvar för att importera alla andra -->
+	<script type="module" src="src/designPatterns/main.js"></script>
 </head>
 <body>
 
-	<div class="row">
-		<div class="lights">
-			<div class="top on"></div>
-			<div class="middle"></div>
-			<div class="bottom"></div>
+	<div class="tab-container">
+		<div class="tab-headings">
+			<p class="selected"> Trafikljus </p>
+			<p> Streamingprofiler </p>
+		</div>
+		<div class="tab-content">
+
+			<!-- Flik 1 -->
+			<div>
+				<div class="row">
+					<div class="lights">
+						<div class="top on"></div>
+						<div class="middle"></div>
+						<div class="bottom"></div>
+					</div>
+				</div>
+				<button id="button-next"> Nästa steg </button>
+			</div>
+
+			<!-- Flik 2 -->
+			<div class="hidden">
+				<section class="streaming-container">
+					<p> Profiler </p>
+					<input id="profile-name" type="text" />
+					<button id="add-profile"> Lägg till profil </button>
+					<ul id="profile-list"></ul>
+				</section>
+			</div>
+
 		</div>
 	</div>
-	<button id="button-next"> Nästa steg </button>
 
-	<section class="streaming-container">
-		<p> Profiler </p>
-		<input id="profile-name" type="text" />
-		<button id="add-profile"> Lägg till profil </button>
-		<ul id="profile-list"></ul>
-	</section>
 
 	<div class="card-container">
 		<h1> Deckare </h1>

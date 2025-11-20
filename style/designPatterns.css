@@ -1,3 +1,4 @@
+/* Cards används för böckerna */
 .cards {
 	display: flex;
 	flex-wrap: wrap;
@@ -16,3 +17,50 @@
 	h2 { font-size: 16px; }
 }
 
+
+/* Flikar används för trafikljus + streamingprofiler */
+:root {
+	--border-color: rgb(27, 43, 121);
+	--bg-color: rgb(197, 206, 248);
+	--selection: hotpink;
+}
+.tab-container {
+	border: 2px solid var(--border-color);
+	border-radius: 0.2em;
+	padding: 0.2em;
+	background-color: var(--bg-color);
+
+	.tab-headings {
+		display: flex;
+		padding: 0.4em 0.2em 0.2em 0.4em;
+		gap: 0.5em;
+		border-bottom: 2px solid var(--border-color);
+
+		p {
+			margin: 0;
+			border: 2px solid var(--border-color);
+			border-radius: 0.2em;
+			padding: 0.2em 0.6em;
+			transition: all 0.5s;
+
+			&:hover {
+				cursor: pointer;
+				box-shadow: 0.2em 0.4em 0.3em var(--border-color);
+				transform: translate(-0.2em, -0.4em);
+			}
+
+			&.selected {
+				background-color: var(--selection);
+			}
+		}
+	}
+	.tab-content {
+
+		.hidden {
+			/* Metoder för att göra element osynliga: opacity:0, display:none, translateY(-6000px), visibility:hidden
+			Vi väljer display!
+			 */
+			display: none;
+		}
+	}
+}
