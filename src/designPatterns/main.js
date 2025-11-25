@@ -4,6 +4,7 @@ import { initTabs } from './tabs.js'
 import { initCounter } from './counter.js'
 import { state } from "./store.js"
 import { load } from "./storage.js"
+import { initDialog } from './dialog.js'
 
 // Det första vi gör: kolla localStorage
 let data = load()
@@ -19,3 +20,6 @@ initTabs()
 
 // Counter - initialisera
 initCounter()
+
+// Dialogruta
+initDialog()

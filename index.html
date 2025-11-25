@@ -16,6 +16,14 @@
 	<script type="module" src="src/designPatterns/main.js"></script>
 </head>
 <body>
+	<div class="overlay hidden">
+		<dialog>
+			<h1> Viktigt! </h1>
+			<p> Det kommer att gå bra. Du klarar det! </p>
+			<button id="hide-dialog"> Göm dialogen </button>
+		</dialog>
+	</div>
+	
 
 	<div class="tab-container">
 		<div class="tab-headings">
@@ -62,6 +70,9 @@
 		</div>
 	</div>
 
+	<div>
+		<button id="show-dialog"> Visa dialog </button>
+	</div>
 
 	<div class="card-container">
 		<h1> Deckare </h1>
