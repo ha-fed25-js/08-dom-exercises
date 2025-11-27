@@ -5,6 +5,7 @@ import { initCounter } from './counter.js'
 import { state } from "./store.js"
 import { load } from "./storage.js"
 import { initDialog } from './dialog.js'
+import { initSortButtons } from "./sorting.js"
 
 // Det första vi gör: kolla localStorage
 let data = load()
@@ -23,3 +24,6 @@ initCounter()
 
 // Dialogruta
 initDialog()
+
+// Sökfunktioner
+initSortButtons()

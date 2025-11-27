@@ -12,6 +12,11 @@ const cartContainer = document.querySelector('.card-cart .cart')
 // Denna funktion kan skapa DOM-element och lägga in på webbsidan
 // Listan med böcker (med eller utan rabatt)
 function renderBooks(books) {
+	if( !books ) {
+		console.error('Du måste anropa renderBooks med en lista med bok-objekt!')
+		return
+	}
+
 	// Ta bort allt innehåll från ".cards"
 	cardSection.innerHTML = ''
 	// Alternativt sätt - krångligare

@@ -91,3 +91,22 @@ body {
 .hidden {
 	display: none;
 }
+
+
+/* Sortering */
+.sort-container {
+	display: flex;
+	gap: 0.4em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+
+	button {
+		display: flex;
+		align-items: center;
+
+		img {
+			padding-left: 0.5em;
+			width: 1.2em;
+		}
+	}
+}
